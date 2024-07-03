@@ -4,7 +4,7 @@ services:
     maven:
         build:
             context: ./docker
-            dockerfile: bf.dockerfile
+            dockerfile: tomcat.dockerfile
         volumes:
    
     tomcat: 
