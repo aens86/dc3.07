@@ -4,7 +4,7 @@ services:
     maven:
         build:
             context: ./docker
-            dockerfile: tomcat.dockerfile
+            dockerfile: mvn.dockerfile
         volumes: 
              - war-storage:/home/user/boxfuse-sample-java-war-hello/target/
    
