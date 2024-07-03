@@ -6,4 +6,4 @@ RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git
 
 WORKDIR /home/user/boxfuse-sample-java-war-hello
 RUN mvn package 
-CMD [ "maven" ]
+CMD [ "bash" ]
