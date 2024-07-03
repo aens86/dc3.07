@@ -1,8 +1,9 @@
-FROM alpine:latest
-RUN apk update
-RUN apk add openjdk11 wget
-WORKDIR /opt/tomcat
-RUN wget https://archive.apache.org/dist/tomcat/tomcat-9/v9.0.44/bin/apache-tomcat-9.0.44.tar.gz
-RUN tar xvzf apache-tomcat-9.0.44.tar.gz --strip-components 1 --directory /opt/tomcat 
-EXPOSE 8080
-ENTRYPOINT ["/opt/tomcat/bin/catalina.sh"]
+FROM  ubuntu:18.04
+RUN apt update
+RUN apt install default-jdk maven wget git -y
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git 
+
+WORKDIR /home/user/boxfuse-sample-java-war-hello
+RUN mvn package 
+RUN cp /home/user/boxfuse-sample-java-war-hello/target/hello-1.0.war /opt/tomcat/webapps/
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
