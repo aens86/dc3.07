@@ -13,7 +13,7 @@ services:
         ports:
              - '8080:8080'
         volumes: 
-             - war-storage:/usr/local/tomcat/webapps
+             - war-storage:/usr/local/tomcat/webapps/
 volumes: 
         war-storage: 
         
