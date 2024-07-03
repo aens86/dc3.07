@@ -6,7 +6,7 @@ services:
             context: ./docker
             dockerfile: mvn.dockerfile
         volumes: 
-             - war-storage:/home/user/boxfuse-sample-java-war-hello/target/
+             - war-storage:/home/user/boxfuse-sample-java-war-hello/target:Z
    
     tomcat: 
         image: tomcat:9.0-alpine    
