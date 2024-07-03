@@ -4,5 +4,6 @@ RUN apt install default-jdk maven wget git -y
 WORKDIR /home/user/
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git 
 
-WORKDIR /home/user/boxfuse-sample-java-war-hello/
-RUN [ maven ] 
+WORKDIR /home/user/boxfuse-sample-java-war-hello/target
+RUN mvn package 
+CMD [ "maven" ]
