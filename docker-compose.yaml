@@ -5,14 +5,16 @@ services:
         build:
             context: ./docker
             dockerfile: tomcat.dockerfile
-        volumes: war:/home/user/boxfuse-sample-java-war-hello/target/
+        volumes: 
+             - war-storage:/home/user/boxfuse-sample-java-war-hello/target/
    
     tomcat: 
         image: tomcat:9.0-alpine    
         ports:
              - '8080'
-        volumes: war:/usr/local/tomcat
+        volumes: 
+             - war-storage:/usr/local/tomcat/webapps
 volumes: 
-        war: 
+        war-storage: 
         
              
